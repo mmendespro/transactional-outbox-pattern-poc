@@ -21,3 +21,15 @@ graph LR
     B --> C((Broker))
     C --> D[Service: Post]
     C --> E[Service: Comments]
+```
+
+## Technology
+ 
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- [MySQL](https://www.mysql.com)
+- [Postgres](https://www.postgresql.org)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Kafka](https://kafka.apache.org)
+- [Kafka Connect](https://docs.confluent.io/platform/current/connect/index.html)
+- [Debezium MySQL Source Connector](https://docs.confluent.io/kafka-connectors/debezium-mysql-source/current/mysql_source_connector_config.html)
