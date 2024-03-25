@@ -1,0 +1,9 @@
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+    "content": "Post 1"
+}
+
+###
+GET http://localhost:8080/posts

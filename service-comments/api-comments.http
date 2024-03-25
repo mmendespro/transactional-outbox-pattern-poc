@@ -1,0 +1,7 @@
+POST http://localhost:8081/comments
+Content-Type: application/json
+
+{
+    "text": "Comment of post 1",
+    "postId": 1
+}
