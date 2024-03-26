@@ -2,6 +2,9 @@ POST http://localhost:8081/comments
 Content-Type: application/json
 
 {
-    "text": "Comment of post 1",
+    "text": "Comment 2 of post 1",
     "postId": 1
 }
+
+###
+GET http://localhost:8081/comments

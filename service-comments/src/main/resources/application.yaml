@@ -3,9 +3,10 @@ server:
 
 spring:
     datasource:
-        url: jdbc:mysql://localhost:3306/commentsdb
         username: root
         password: toor
+        url: jdbc:mysql://localhost:3306/commentsdb?allowPublicKeyRetrieval=true&rewriteBatchedStatements=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=true&createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=UTC
     jpa:
-        hibernate:
-            ddl-auto: create
+        show-sql: true
+        generate-ddl: true
+        hibernate.ddl-auto: update

@@ -11,10 +11,12 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.local.poc.posts.controller.CommentDTO;
 import net.local.poc.posts.model.Comment;
 import net.local.poc.posts.repository.PostRepository;
 
+@Slf4j
 @Service
 public class KafkaConsumerOutbox {
 
@@ -27,8 +29,9 @@ public class KafkaConsumerOutbox {
     }
 
     @Transactional
-    @KafkaListener(topics = "mysql.comments_db.comment_outbox", groupId = "posts-service")
+    @KafkaListener(topics = "mysql.commentsdb.comment_outbox", groupId = "posts-service")
     public void consumeMessage(GenericMessage message) throws JsonMappingException, JsonProcessingException {
+        log.info("Received message: {}", message);
         var dto = objectMapper.readValue(message.getPayload(), CommentDTO.class);
         var comment = new Comment();
         comment.setId(dto.id());
